@@ -1,0 +1,433 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Global Styles */
+:root {
+    --primary: #d4a373;
+    --secondary: #fefae0;
+    --dark: #5a3e2b;
+    --light: #f9f3e9;
+    --accent: #e8c4a2;
+    --vh: 1vh; /* Added for mobile viewport height */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--accent);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 15px;
+    max-width: 100%; /* Ensure image doesn't overflow */
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 24px); /* Responsive font size */
+    color: var(--dark);
+}
+
+.logo h1 span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-links a i {
+    margin-right: 8px;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--dark);
+}
+
+/* Hero Section */
+.hero {
+    padding: 50px 0;
+    position: relative;
+}
+
+.hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100); /* Use CSS variable */
+    background: rgba(248, 237, 227, 0.8);
+    z-index: -1;
+}
+
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(90, 62, 43, 0.1);
+    scroll-margin-top: 80px; /* For anchor links */
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+/* Home Section */
+.home-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.home-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 42px); /* Responsive font size */
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.home-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-text {
+    order: 2;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 42px);
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    order: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Designs Section */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 42px);
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.designs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.design-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.design-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.design-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.design-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.design-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-info {
+    order: 2;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 28px);
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    margin-right: 15px;
+    color: var(--primary);
+    min-width: 24px;
+}
+
+.booking-info {
+    background: rgba(212, 163, 115, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    border-left: 4px solid var(--primary);
+}
+
+.booking-info h4 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.booking-info h4 i {
+    margin-right: 10px;
+}
+
+.contact-form {
+    order: 1;
+    width: 100%;
+}
+
+.contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 28px);
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    -webkit-appearance: none; /* Fix for iOS */
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background: #c08d5a;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .about-text {
+        order: 1;
+        flex: 1;
+    }
+    
+    .about-image {
+        order: 2;
+        flex: 1;
+        margin-top: 0;
+    }
+    
+    .contact-content {
+        flex-direction: row;
+    }
+    
+    .contact-info {
+        order: 1;
+        flex: 1;
+    }
+    
+    .contact-form {
+        order: 2;
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100 - 80px);
+        background: var(--accent);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .nav-links a {
+        padding: 12px 20px;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+/* Touch device specific styles */
+@media (hover: none) {
+    .design-card:hover {
+        transform: none;
+    }
+    
+    .nav-links a {
+        padding: 12px 20px;
+    }
+}
+
+/* Animation for active section */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Print styles */
+@media print {
+    nav, .menu-toggle {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+}
